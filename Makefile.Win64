@@ -1,0 +1,10 @@
+LIBS = ws2_32.lib user32.lib advapi32.lib gdi32.lib Dwmapi.lib
+OBJS = screenshot.obj
+
+all: screenshot_64.exe
+
+screenshot_64.exe: screenshot.obj
+	link /nologo /out:$@ $** $(LIBS) 
+
+clean:
+	del screenshot.exe $(OBJS)
